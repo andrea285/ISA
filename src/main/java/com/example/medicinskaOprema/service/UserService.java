@@ -25,4 +25,12 @@ public class UserService {
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    public void activateUser(String email) {
+        Optional<User> user = userRepository.findByEmail((email));
+        user.ifPresent(u -> {
+            u.setEnabled(true);
+            userRepository.save(u);
+        });
+    }
 }
