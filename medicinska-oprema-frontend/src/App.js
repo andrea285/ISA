@@ -28,12 +28,13 @@ function App() {
             </a>
             <h1>Welcome to Medicinska Oprema App</h1>
             <p>Your React application is running!</p>
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/companies" element={<Companies />} />
+            </Routes>
           </header>
-          <Routes>
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
-            <Route path="/companies" component={Companies} />
-          </Routes>
+
         </div>
       </Router>
 
