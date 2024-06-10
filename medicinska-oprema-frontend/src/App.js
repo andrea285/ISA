@@ -5,35 +5,26 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Companies from "./components/Companies";
 
-import logo from './logo.svg';
 import './App.css';
+import './components/styles.css';
 
 function App() {
   return (
 
       <Router>
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-            <h1>Welcome to Medicinska Oprema App</h1>
-            <p>Your React application is running!</p>
-          </header>
-          <Routes>
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
-            <Route path="/companies" component={Companies} />
-          </Routes>
+          <nav className="App-nav">
+            <a className="App-link" href="/register">Register</a>
+            <a className="App-link" href="/login">Login</a>
+            <a className="App-link" href="/companies">Companies</a>
+
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/companies" element={<Companies />} />
+            </Routes>
+          </nav>
+
         </div>
       </Router>
 
